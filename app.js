@@ -85,12 +85,9 @@ function sumArray(sumArr) { //eslint-disable-line
     // Define variables for problem Four -- key outputs for problem four are the input array and sum.
     var i=0;
     var sumFour = 0;
-    var arrayFour = [];
-    var stringNum = '0'
-    
+            
     while (sumArr[i] !== undefined){
-        stringNum = sumArr[i].toString();
-        arrayFour.push(stringNum);
+
         if (sumFour === 0) {
             sumFour = sumArr[i];
         } else {
@@ -99,7 +96,7 @@ function sumArray(sumArr) { //eslint-disable-line
         i++;
     }
 
-    var messageFour = ''+arrayFour+ ' was passed in as an array of numbers, and ' +sumFour+ ' is their sum.';
+    var messageFour = sumArr+ ' was passed in as an array of numbers, and ' +sumFour+ ' is their sum.';
     return [sumFour, messageFour];
 }
 
@@ -121,11 +118,27 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+    
+    var multFive = 1;
+
+    for (var n = 0; n < multArr.length; n++) {
+
+        if (n === 0) {
+            multFive = multArr[n];
+        } else {
+            multFive = multiply(multFive,multArr[n])[0];
+        }
+    }
+
+    var messageFive = 'The numbers ' +multArr+ ' have a product of ' +multFive+ '.';
+    
+    return [multFive, messageFive];
+
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -146,13 +159,28 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+// var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
-function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+// function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
-}
+//     var multSix = 1;
 
-// Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+//     for (var n = 0; n < dynamicArray.length; n++) {
+
+//         if (n === 0) {
+//             multSix = multArr[n];
+//         } else {
+//             multSix = multiply(multSix, dynamicArray[n])[0];
+//         }
+//     }
+
+//     var messageSix = 'The numbers ' +dynamicArray+ ' have a product of ' +multSix+ '.';
+    
+//     return [multSix, messageSix];
+
+// }
+
+// // Here is the test for multiplyArray(); uncomment it to run it
+//  testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
